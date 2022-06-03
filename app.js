@@ -30,9 +30,9 @@ const bodyParser = require('body-parser');
 
 const app = new express; 
 
-app.use(cors({
-    origin: 'http://127.0.0.1'
-}));
+// app.use(cors({
+//     origin: 'http://127.0.0.1'
+// }));
 
 app.set('views','./src/views'); 
 app.set('view engine','ejs'); 
@@ -59,7 +59,7 @@ app.get('/',function(req,res){
 
 
 
-
-app.listen(3000,()=>{
+const PORT = process.env.PORT || 80;
+app.listen(PORT,()=>{
     console.log("Server Ready on 3000");
 });
